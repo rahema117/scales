@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Cairo', 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    direction: rtl;
+    text-align: right;
+  }
+  
+  body {
+    direction: rtl;
+    text-align: right;
+    @apply bg-[#f8faf9] text-gray-800 antialiased selection:bg-gov-secondary selection:text-white;
+  }
+
+  input, textarea, select {
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.glass-panel-dark {
+  @apply bg-gray-900/80 backdrop-blur-md border border-gray-800 shadow-xl;
+}
+
+/* Custom Scrollbar for Sleek Aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gov-secondary/30 rounded-full hover:bg-gov-secondary/50 transition-colors;
+}
+
+/* Government Stamp Watermark Effect for Pages */
+.gov-watermark {
+  position: relative;
+}
+
+.gov-watermark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  width: 400px;
+  height: 400px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><circle cx="50" cy="50" r="45" fill="none" stroke="%230e5231" stroke-width="2"/><circle cx="50" cy="50" r="38" fill="none" stroke="%230e5231" stroke-dasharray="2 2"/><text x="50" y="45" font-family="Cairo" font-size="6" font-weight="bold" fill="%230e5231" text-anchor="middle">وزارة التموين</text><text x="50" y="55" font-family="Cairo" font-size="5" font-weight="bold" fill="%230e5231" text-anchor="middle">مصلحة الدمغ والموازين</text><text x="50" y="65" font-family="Cairo" font-size="4" font-weight="bold" fill="%230e5231" text-anchor="middle">الجمهورية المصرية</text></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Print CSS Styles for professional PDF export */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+    direction: rtl !important;
+    text-align: right !important;
+  }
+
+  /* Hide navigation, buttons, footers and tabs when printing */
+  nav, footer, button, .no-print, .actions-column, .tab-bar, .stats-cards {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Setup full width sheet */
+  .printable-area {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    direction: rtl !important;
+    text-align: right !important;
+  }
+
+  /* Table styling for clean reports */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 20px !important;
+    direction: rtl !important;
+  }
+
+  th, td {
+    border: 1px solid #000 !important;
+    padding: 8px !important;
+    text-align: center !important;
+    font-size: 10pt !important;
+  }
+
+  th {
+    background-color: #f2f2f2 !important;
+    color: black !important;
+    font-weight: bold !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Page break rules */
+  tr {
+    page-break-inside: avoid !important;
+  }
+
+  .page-break {
+    page-break-before: always !important;
+  }
+
+  /* Header structure for official documents */
+  .print-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-bottom: 2px double #000 !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 20px !important;
+    direction: rtl !important;
+  }
+}
+
+.print-only {
+  display: none;
+}

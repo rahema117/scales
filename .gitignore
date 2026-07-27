@@ -1,0 +1,17 @@
+# Node dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+
+# Database local data (بسبب وجود مجلد db_data عندك)
+db_data/
+
+# Build folders
+dist/
+build/
