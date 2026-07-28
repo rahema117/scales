@@ -97,7 +97,7 @@ export default function Home() {
           </h1>
           
           <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-            خدمات التحقق والدمغ الإلكتروني لموازين البيع والموازين الصناعية ومحطات وفناطيس الوقود للشركات والمؤسسات بمدينة العبور.
+            خدمات التحقق والدمغ  للموازين التجارية  ومحطات وفناطيس الوقود .
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4.5">
