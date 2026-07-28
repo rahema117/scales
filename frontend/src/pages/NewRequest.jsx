@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://scales-backend.onrender.com/api';
 
 export default function NewRequest() {
   // Current step: 'select' | 'form'

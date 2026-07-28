@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Mail, PhoneCall, Calendar, User, MessageSquare, Loader2, Inbox } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://scales-backend.onrender.com/api';
 
 export default function MessagesManager() {
   const [messages, setMessages] = useState([]);

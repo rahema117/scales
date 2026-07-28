@@ -22,8 +22,8 @@ import {
   DollarSign
 } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
-const UPLOADS_BASE = 'http://localhost:5000/uploads';
+const API_BASE = 'https://scales-backend.onrender.com/api';
+const UPLOADS_BASE = 'https://scales-backend.onrender.com/uploads';
 
 export default function RequestsManager() {
   const [requests, setRequests] = useState([]);

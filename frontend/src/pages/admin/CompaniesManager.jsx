@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Building, Plus, Search, Edit2, Trash2, Calendar, ClipboardList, Phone, User, AlertTriangle, Loader2, ArrowLeft, History } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://scales-backend.onrender.com/api';
 
 export default function CompaniesManager() {
   const [companies, setCompanies] = useState([]);

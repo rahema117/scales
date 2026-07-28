@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { 
-  Search, 
-  Calendar, 
-  Clock, 
-  MessageSquare, 
-  ShieldAlert, 
-  CheckCircle2, 
-  FileSearch, 
+import {
+  Search,
+  Calendar,
+  Clock,
+  MessageSquare,
+  ShieldAlert,
+  CheckCircle2,
+  FileSearch,
   CreditCard,
   Building2,
   DollarSign,
   Award
 } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
-
+const API_BASE = 'https://scales-backend.onrender.com/api';
 export default function TrackRequest() {
   const [requestNumber, setRequestNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +48,7 @@ export default function TrackRequest() {
     } catch (err) {
       console.error('Tracking query error:', err);
       setErrorMsg(
-        err.response?.data?.message || 
+        err.response?.data?.message ||
         'لم يتم العثور على طلب مطابق أو حدث خطأ في الاتصال بالخادم.'
       );
     } finally {
@@ -96,7 +95,7 @@ export default function TrackRequest() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12 text-right">
-      
+
       {/* Title */}
       <div className="text-center space-y-3 mb-10">
         <div className="inline-flex p-3 bg-gov-light rounded-2xl text-gov-primary">
@@ -111,7 +110,7 @@ export default function TrackRequest() {
       {/* Search Box */}
       <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-sm mb-10">
         <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4 items-stretch">
-          
+
           <div className="flex-1 flex flex-col gap-2">
             <label className="text-sm font-semibold text-gray-700">رقم الطلب</label>
             <input
@@ -148,7 +147,7 @@ export default function TrackRequest() {
       {/* Results Display */}
       {searchResult && (
         <div className="bg-white rounded-3xl shadow-md border border-gray-100 overflow-hidden animate-fade-in space-y-8 p-8">
-          
+
           {/* Header & Result Summary */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-100 pb-5 gap-3">
             <div>
@@ -161,16 +160,15 @@ export default function TrackRequest() {
               </div>
             </div>
             <div>
-              <span className={`px-4 py-1.5 rounded-full text-xs font-bold ${
-                searchResult.status === 'تم تنفيذ الدمغ والمعايرة' ? 'bg-green-100 text-green-800' :
-                searchResult.status === 'تم الدفع' ? 'bg-teal-100 text-teal-800' :
-                searchResult.status === 'تحديد موعد الزيارة والدمغ والمعايرة' || searchResult.status === 'تم تحديد موعد' ? 'bg-purple-100 text-purple-800' :
-                searchResult.status === 'تحديد زيارة مكتب العبور لإتمام الدفع' ? 'bg-amber-100 text-amber-900' :
-                searchResult.status === 'تمت مراجعة الطلب' ? 'bg-blue-100 text-blue-800' :
-                searchResult.status === 'مستندات ناقصة' ? 'bg-orange-100 text-orange-800' :
-                searchResult.status === 'مرفوض' ? 'bg-red-100 text-red-800' :
-                'bg-gray-100 text-gray-700'
-              }`}>
+              <span className={`px-4 py-1.5 rounded-full text-xs font-bold ${searchResult.status === 'تم تنفيذ الدمغ والمعايرة' ? 'bg-green-100 text-green-800' :
+                  searchResult.status === 'تم الدفع' ? 'bg-teal-100 text-teal-800' :
+                    searchResult.status === 'تحديد موعد الزيارة والدمغ والمعايرة' || searchResult.status === 'تم تحديد موعد' ? 'bg-purple-100 text-purple-800' :
+                      searchResult.status === 'تحديد زيارة مكتب العبور لإتمام الدفع' ? 'bg-amber-100 text-amber-900' :
+                        searchResult.status === 'تمت مراجعة الطلب' ? 'bg-blue-100 text-blue-800' :
+                          searchResult.status === 'مستندات ناقصة' ? 'bg-orange-100 text-orange-800' :
+                            searchResult.status === 'مرفوض' ? 'bg-red-100 text-red-800' :
+                              'bg-gray-100 text-gray-700'
+                }`}>
                 {searchResult.status}
               </span>
             </div>
@@ -180,10 +178,10 @@ export default function TrackRequest() {
           {searchResult.status !== 'مرفوض' && (
             <div className="py-6 overflow-x-auto">
               <div className="flex items-center justify-between relative min-w-[600px] max-w-2xl mx-auto select-none px-4">
-                
+
                 {/* Horizontal line */}
                 <div className="absolute left-8 right-8 top-4.5 h-1 bg-gray-200 -z-10 rounded"></div>
-                
+
                 {/* Colored fill line */}
                 {currentStep > 1 && (
                   <div
@@ -201,11 +199,10 @@ export default function TrackRequest() {
                   const isActive = step.num === currentStep;
                   return (
                     <div key={step.num} className="flex flex-col items-center gap-2.5 relative">
-                      <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs border-4 transition-all duration-300 ${
-                        isCompleted ? 'bg-gov-secondary text-white border-gov-secondary shadow-md' :
-                        isActive ? 'bg-white text-gov-gold border-gov-primary ring-4 ring-gov-light shadow-md scale-110' :
-                        'bg-white text-gray-400 border-gray-200'
-                      }`}>
+                      <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs border-4 transition-all duration-300 ${isCompleted ? 'bg-gov-secondary text-white border-gov-secondary shadow-md' :
+                          isActive ? 'bg-white text-gov-gold border-gov-primary ring-4 ring-gov-light shadow-md scale-110' :
+                            'bg-white text-gray-400 border-gray-200'
+                        }`}>
                         {isCompleted ? <CheckCircle2 className="w-4 h-4" /> : step.num}
                       </div>
                       <span className={`text-[11px] font-bold text-center max-w-[80px] leading-tight ${isActive ? 'text-gov-primary font-extrabold' : 'text-gray-400'}`}>

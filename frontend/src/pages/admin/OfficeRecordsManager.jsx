@@ -29,7 +29,7 @@ import {
   Clock
 } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://scales-backend.onrender.com/api';
 
 const categoryConfigs = {
   companies: {
@@ -811,7 +811,7 @@ export default function OfficeRecordsManager() {
                               {item.attachments.map((att, idx) => (
                                 <a
                                   key={idx}
-                                  href={`http://localhost:5000${att.filePath}`}
+                                  href={`https://scales-backend.onrender.com${att.filePath}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 hover:bg-gov-primary hover:text-white rounded-md text-[10px] font-bold text-gray-600 transition-all"
@@ -1267,7 +1267,7 @@ export default function OfficeRecordsManager() {
                     {viewingRecord.attachments.map((att, i) => (
                       <a
                         key={i}
-                        href={`http://localhost:5000${att.filePath}`}
+                        href={`https://scales-backend.onrender.com${att.filePath}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-between p-2.5 bg-gov-light text-gov-primary rounded-xl font-bold hover:bg-gov-primary hover:text-white transition-all"

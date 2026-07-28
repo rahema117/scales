@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { FileSpreadsheet, Printer, RefreshCw, FileText, Loader2, Info } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://scales-backend.onrender.com/api';
 
 export default function ReportsManager() {
   const [reportType, setReportType] = useState('all-companies');

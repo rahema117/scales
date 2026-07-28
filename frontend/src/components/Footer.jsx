@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock, ShieldAlert, Send, CheckCircle2, ArrowLeft 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://scales-backend.onrender.com/api';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

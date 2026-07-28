@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Mail, Lock, ShieldAlert, ArrowLeft, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://scales-backend.onrender.com/api';
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ export default function AdminLogin() {
     } catch (err) {
       console.error('Login error:', err);
       setErrorMsg(
-        err.response?.data?.message || 
+        err.response?.data?.message ||
         'بيانات الدخول غير صحيحة أو خطأ في الاتصال بخادم قاعدة البيانات'
       );
     } finally {
@@ -63,7 +63,7 @@ export default function AdminLogin() {
       <div className="absolute bottom-1/4 -left-24 w-96 h-96 bg-gov-gold/5 rounded-full pointer-events-none blur-3xl"></div>
 
       <div className="w-full max-w-md bg-white rounded-3xl border border-gray-100 shadow-2xl overflow-hidden relative z-10">
-        
+
         {/* Top Header Card */}
         <div className="bg-gov-dark text-white p-8 text-center border-b-4 border-gov-gold space-y-4">
           <div className="mx-auto w-16 h-16 bg-white p-1 rounded-2xl border border-gov-gold/30 flex items-center justify-center shadow-md">
@@ -84,7 +84,7 @@ export default function AdminLogin() {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            
+
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-gray-500">البريد الإلكتروني الوظيفي</label>
               <div className="relative">

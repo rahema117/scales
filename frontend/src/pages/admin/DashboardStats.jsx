@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FileText, Building, FilePlus2, RefreshCw, AlertCircle, AlertTriangle, ShieldCheck, Hourglass, FolderArchive } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://scales-backend.onrender.com/api';
 
 export default function DashboardStats() {
   const [stats, setStats] = useState({
