@@ -319,7 +319,7 @@ export default function Home() {
                 تواصل معنا الآن
               </Link>
               <div className="text-xs text-gray-300">
-                أو اتصل بنا مباشرة على الهاتف: <span className="font-semibold text-white">02-44789123</span>
+                أو اتصل بنا مباشرة على الهاتف: <span className="font-semibold text-white">02-01018049361</span>
               </div>
             </div>
           </div>
